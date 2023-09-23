@@ -1,0 +1,93 @@
+@use '../abstracts' as *;
+
+:root {
+    --clr-blue-200: #b2d3f3;
+    --clr-blue-600: #7fb6ea;
+    --clr-blue-700: #4285F4;
+    --clr-blue-800: hsl(217, 89%, 55%);
+    --clr-orange-100: #F4B400;
+    --clr-orange-200: #edc370;
+    --clr-orange-400: hsl(40, 100%, 50%);
+    --clr-orange-500: hsl(40, 100%, 55%);
+    --clr-orange-700: #fbbe11;
+    --clr-red-100: #fdf5f2;
+    --clr-red-200: #f8c6c4;
+    --clr-red-300: #DB4437;
+    --clr-red-700: #EA4E43;
+    --clr-red-800: #d92929;
+    --clr-green-100: #bcffcf;
+    --clr-green-150: hsl(137, 59%, 70%);
+    --clr-green-200: hsl(137, 59%, 57%);
+    --clr-positive: #0F9D58;
+    --clr-green-400: #0F9D58;
+    --clr-green-500: #3caf5b;
+    --clr-green-700: #279847;
+    --clr-green-800: #23863f;
+    --clr-purple-400: #aa79cb;
+    --clr-purple-700: #9166ae;
+
+    --wentWell: #279847;
+    --couldBeBetter: #EA4E43;
+    --paid: #279847;
+    --notPaid: #EA4E43;
+
+    --clr-neutral-900: #050505;
+    --clr-neutral-800: #121212;
+    --clr-neutral-600: #333333;
+    --clr-neutral-550: #666666;
+    --clr-neutral-525: #9b9995;
+    --clr-neutral-500: #e5e5e5;
+    --clr-neutral-400: #f1efee;
+    --clr-neutral-300: #F1EFEE;
+    --clr-neutral-200: #F9F7F5;
+    --clr-neutral-150: hsl(60, 11%, 94%);
+    --clr-neutral-100: #F9F7F5;
+
+    --fs-900: 2rem;
+    --fs-850: 2.813rem;
+    --fs-800: 2rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1.25rem;
+    --fs-500: 1.125rem;
+    --fs-400: 0.938rem;
+    --fs-300: 0.813rem;
+    --fs-200: 0.813rem;
+
+    --shadow-200: 0px 3px 9px rgba(0, 0, 0, 0.03), 0px 0.7px 1.4625px rgba(0, 0, 0, 0.016);
+    --shadow-400: 0px 36px 89px rgba(0, 0, 0, 0.04), 0px 23.3333px 52.1227px rgba(0, 0, 0, 0.03), 0px 13.8667px 28.3481px rgba(0, 0, 0, 0.024), 0px 7.2px 14.4625px rgba(0, 0, 0, 0.02), 0px 2.93333px 7.25185px rgba(0, 0, 0, 0.016), 0px 0.666667px 3.50231px rgba(0, 0, 0, 0.01);
+
+    --ff-primary: 'Inter', sans-serif;
+    --ff-secondary: 'Nanum Myeongjo', serif;
+
+    --border-radius: 0.75rem;
+
+    --sidebar-width: 265px;
+}
+
+@media (min-width: 420px) {
+    :root {
+        --fs-900: 2rem;
+    }
+}
+
+@media (min-width: map-get($breakpoints, md)) {
+    :root {
+        --fs-900: 2.5rem;
+        --fs-850: 3.213rem;
+        --fs-800: 2rem;
+        --fs-700: 1.695rem;
+        --fs-400: 1rem;
+        --fs-300: .93rem;
+    }
+}
+
+@media (min-width: map-get($breakpoints, lg)) {
+    :root {
+        --fs-900: 3.3rem;
+        --fs-850: 3.813rem;
+        --fs-800: 2.813rem;
+        --fs-700: 1.875rem;
+        --fs-600: 1.5rem;
+        --fs-400: 1rem;
+    }
+}

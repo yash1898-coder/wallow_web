@@ -1,0 +1,29 @@
+@use '../../base' as *;
+@use '../../abstracts' as *;
+
+.how-teams-use-hero {
+    width: 100%;
+    padding-top: min(7vw, 3rem);
+    display: flex;
+    justify-content: space-between;
+    gap: .4rem;
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    &__img {
+        max-width: 400px;
+    }
+
+    &>div {
+        max-width: 35rem;
+    }
+
+    &__title {
+        margin-top: .4rem;
+    }
+
+    .button {
+        width: fit-content;
+    }
+}

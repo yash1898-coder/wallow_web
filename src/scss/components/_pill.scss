@@ -1,0 +1,11 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.pill {
+    border-radius: .35rem;
+    font-weight: 500;
+    padding: .3rem .75rem;
+    font-size: .95rem;
+    color: #fff;
+    width: fit-content;
+}

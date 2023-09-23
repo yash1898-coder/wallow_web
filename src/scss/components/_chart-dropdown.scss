@@ -1,0 +1,53 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.chart-dropdown {
+    --border-radius: .35rem;
+    position: relative;
+    font-weight: 400;
+
+    &:focus {
+        outline: none;
+        border-color: var(--clr-green-700);
+    }
+
+    &__toggle {
+        img {
+            max-width: 50px;
+        }
+    }
+
+    &__options {
+        box-shadow: 1px 1px 10px rgb(0 0 0 / .05);
+        z-index: 9;
+        position: absolute;
+        right: 0;
+        top: 55px;
+        min-width: 125px;
+        display: none;
+        overflow: auto;
+        border-radius: var(--border-radius);
+        border: 1px solid var(--clr-neutral-500);
+        background-color: var(--clr-neutral-100);
+        color: hsl(var(--clr-neutral-700));
+
+        &[data-visible=true] {
+            display: block;
+        }
+    }
+
+    &__option {
+        text-align: start;
+        padding: .5em 1em;
+        color: hsl(var(--clr-primary-400));
+        display: flex;
+        justify-content: flex-start;
+        gap: .75rem;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__option:not(:last-child) {
+        border-bottom: 1px solid var(--clr-neutral-500);
+    }
+}

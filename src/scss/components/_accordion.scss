@@ -1,0 +1,31 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.accordion {
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--clr-neutral-300);
+    padding-inline: .3rem;
+
+    &:first-child {
+        margin-top: 1rem;
+        border-top: 1px solid var(--clr-neutral-300);
+
+    }
+
+    &__summary {
+        cursor: pointer;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        gap: .5rem;
+        align-items: center;
+
+        svg {
+            min-width: 15px;
+        }
+    }
+
+    &__details {
+        margin-top: .5rem;
+    }
+}

@@ -1,0 +1,47 @@
+@use '../../base' as *;
+@use '../../abstracts' as *;
+
+.about-even-cols {
+    display: grid;
+    gap: min(5vw, 2rem);
+    justify-content: center;
+    align-items: center;
+
+    @media(min-width: map-get($breakpoints, md)) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    p {
+        max-width: 650px;
+    }
+}
+
+.about-team-members {
+    padding-bottom: 5rem;
+
+    &__grid {
+        margin-top: min(6vw, 4rem);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        justify-items: center;
+
+        @media(min-width: 700px) {
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 5rem;
+        }
+
+    }
+
+    .team-member {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    img {
+        height: 115px;
+        object-fit: cover;
+        object-position: center;
+    }
+}

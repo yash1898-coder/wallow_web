@@ -1,0 +1,27 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.spinner {
+    --_size: 50px;
+    --_color: var(--clr-neutral-550);
+    align-self: center;
+    margin-inline: auto;
+    width: var(--_size);
+    height: var(--_size);
+    border: calc(var(--_size) / 9) solid var(--_color);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

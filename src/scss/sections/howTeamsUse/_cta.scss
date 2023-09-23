@@ -1,0 +1,15 @@
+@use '../../base' as *;
+@use '../../abstracts' as *;
+
+.how-teams-use-cta {
+    &>div {
+        max-width: 40rem;
+        text-align: center;
+        margin-inline: auto;
+        padding-top: min(10vw, 7rem);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+}

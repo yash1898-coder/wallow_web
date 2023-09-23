@@ -1,0 +1,112 @@
+@use '../../base' as *;
+@use '../../abstracts' as *;
+
+.members-table {
+    --columns: 270px 1fr 1fr .4fr;
+
+    &__caption {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        border-radius: .35rem;
+        width: 100%;
+        background-color: var(--clr-neutral-200);
+        padding: 1rem;
+    }
+
+
+    &__row,
+    &__header {
+        &>:first-child {
+            @media(min-width: 1300px) {
+                border-right: 1px solid var(--clr-neutral-500);
+            }
+        }
+    }
+
+    &__header {
+        &>* {
+            font-weight: 600;
+            border-bottom: 1px solid var(--clr-neutral-500);
+        }
+
+        display: none;
+
+        @media(min-width: 1300px) {
+            display: grid;
+            grid-template-columns: var(--columns);
+        }
+    }
+
+    &__row {
+        display: grid;
+
+        &>* {
+            border-bottom: 1px solid var(--clr-neutral-500);
+        }
+
+        @media(min-width: 1300px) {
+            grid-template-columns: var(--columns);
+        }
+    }
+
+    &__header-item--mobile {
+        font-weight: 600;
+
+        @media(min-width: 1300px) {
+            display: none;
+        }
+    }
+
+    &__row[data-highlighted=true] {
+        background-color: var(--clr-neutral-200);
+    }
+
+
+    &__row-text[data-deactivated=true] {
+        opacity: .6;
+    }
+
+    &__row-item,
+    &__header-item {
+        display: flex;
+        align-items: center;
+        gap: .7rem;
+        min-height: 50px;
+        padding-left: .75rem;
+    }
+
+    &__name {
+        @media(max-width: map-get($breakpoints, md)) {
+            .popup {
+                margin-left: auto;
+            }
+        }
+
+        @media(min-width: 1300px) {
+            width: 100%;
+
+            .popup {
+                margin-left: auto;
+            }
+        }
+    }
+
+    &__row-item {
+        padding-right: .75rem;
+        min-height: 50px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: .5rem;
+        padding-block: .75rem;
+
+        @media(min-width: 500px) {
+            grid-template-columns: 160px 1fr;
+        }
+
+        @media(min-width: 1300px) {
+            display: flex;
+            align-items: center;
+        }
+    }
+}

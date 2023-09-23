@@ -1,0 +1,16 @@
+@use '../../base' as *;
+@use '../../abstracts' as *;
+
+.home-building-blocks {
+    margin-top: min(10vw, 4.375rem);
+
+    &__grid {
+        display: grid;
+        gap: min(5vw, 1.75rem);
+
+        @media(min-width: map-get($breakpoints, md)) {
+            grid-template-columns: 1fr 1fr;
+
+        }
+    }
+}

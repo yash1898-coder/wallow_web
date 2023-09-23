@@ -1,0 +1,69 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.popup {
+    --border-radius: .35rem;
+    position: relative;
+    font-weight: 400;
+    width: fit-content;
+    z-index: 99;
+
+    &:focus {
+        outline: none;
+        border-color: var(--clr-green-700);
+    }
+
+    &__toggle {
+        min-width: 23px;
+    }
+
+    height: 23px;
+
+    &__options {
+        z-index: 99;
+        box-shadow: 1px 1px 10px rgb(0 0 0 / .05);
+        position: absolute;
+        right: 0;
+        top: calc(100% + .25em);
+        min-width: 230px;
+        display: none;
+        max-height: 15em;
+        overflow: auto;
+        border-radius: var(--border-radius);
+        border: 1px solid var(--clr-neutral-500);
+        background-color: var(--clr-neutral-100);
+
+        @media(min-width: map-get($breakpoints, md)) {
+            right: unset;
+            left: 0;
+        }
+
+        &[data-visible=true] {
+            display: block;
+        }
+    }
+
+    &__option {
+        cursor: auto;
+        text-align: left;
+        padding: .5em 1em;
+        color: hsl(var(--clr-primary-400));
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        width: 100%;
+
+        &[disabled] {
+            opacity: .7;
+        }
+
+        &:hover:not([disabled]) {
+            cursor: pointer;
+            background-color: var(--clr-neutral-400);
+        }
+    }
+
+    &__option:not(:last-child) {
+        border-bottom: 1px solid var(--clr-neutral-500);
+    }
+}

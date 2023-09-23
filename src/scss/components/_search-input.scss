@@ -1,0 +1,17 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.search-input {
+    position: relative;
+
+    &__icon {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__input {
+        padding-left: 2.25rem;
+    }
+}

@@ -1,0 +1,134 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.pricing {
+    width: min(95%, 1390px);
+    margin-inline: auto;
+
+    &__hero {
+        margin-top: min(7vw, 3rem);
+
+        .partner-logos {
+            margin-top: 0;
+        }
+    }
+
+    &__partners {
+        img {
+            max-width: 120px;
+            object-fit: contain;
+        }
+    }
+
+    &__cards-grid {
+        margin-top: min(10vw, 7rem);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-direction: column;
+
+        @media(min-width: 720px) {
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: stretch;
+            gap: 2rem;
+        }
+
+        @media(min-width: 1300px) {
+            justify-content: center;
+            display: flex;
+            gap: 2rem;
+        }
+    }
+
+    &__faq {
+        margin-top: min(7vw, 5rem);
+        max-width: 800px;
+        margin-inline: auto;
+
+        &>p {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__cta {
+        margin-top: min(10vw, 6rem);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__cta-link-text {
+        .link {
+            display: inline-flex;
+        }
+    }
+}
+
+.pricing-table {
+    margin-top: min(7vw, 3rem);
+    margin-bottom: min(8vw, 5rem);
+    --_columns: .8fr 1fr 1fr 1fr;
+
+    &__header {
+        font-weight: 600;
+        display: none;
+        border-bottom: 1px solid var(--clr-neutral-300);
+        padding-bottom: .5rem;
+
+        @media(min-width: map-get($breakpoints, lg)) {
+            display: grid;
+            grid-template-columns: var(--_columns);
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+        align-items: flex-start;
+        border-bottom: 1px solid var(--clr-neutral-300);
+        padding-block: .5rem;
+
+        @media(min-width: map-get($breakpoints, lg)) {
+            display: grid;
+            grid-template-columns: var(--_columns);
+            gap: 1rem;
+            align-items: center;
+            padding-block: .8rem;
+
+            .button {
+                justify-self: start;
+            }
+        }
+
+
+    }
+
+    &__row-title {
+        font-weight: 600;
+
+        @media(min-width: map-get($breakpoints, lg)) {
+            display: none;
+        }
+    }
+
+}
+
+.pricing-drawing {
+    max-width: 700px;
+}
+
+.pricing-section {
+    padding-block: min(8vw, 5rem);
+    border-top: 1px solid var(--clr-neutral-300);
+    border-bottom: 1px solid var(--clr-neutral-300);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}

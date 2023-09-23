@@ -1,0 +1,115 @@
+@use '../../base' as *;
+@use '../../abstracts' as *;
+
+.welcome {
+    margin-top: min(10vw, 5rem);
+    display: flex;
+    flex-direction: column;
+
+    &__intro {
+        align-items: flex-end;
+
+        h1 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+
+            @media (min-width: 500px) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &__footer {
+        margin-top: 2rem;
+        background-color: var(--clr-neutral-200);
+        border-radius: var(--border-radius);
+        padding: 1rem;
+        padding-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        &>.flex {
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        img {
+            max-width: 200px;
+        }
+
+        @media (min-width: 1250px) {
+            padding-left: 1rem;
+            padding-right: 2rem;
+            padding-bottom: 0;
+            flex-direction: row;
+
+            button {
+                margin-bottom: .75rem;
+            }
+
+            &>.flex {
+                flex-direction: row;
+                text-align: start;
+            }
+        }
+    }
+
+    &__drawing {
+        margin-bottom: -1.65rem;
+        z-index: 9;
+        margin-left: auto;
+        max-width: 200px;
+
+        @media(min-width: map-get($breakpoints, sm)) {
+            max-width: 250px;
+        }
+    }
+
+    &__title {
+        font-size: var(--fs-700);
+    }
+
+    &__spinner {
+        margin-top: 2.5rem;
+    }
+}
+
+.welcome-card {
+    background-color: var(--clr-neutral-200);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .75rem;
+
+    .pfp {
+        min-width: 60px;
+        height: 60px;
+        border-radius: .45rem;
+
+        img {
+            min-width: 60px;
+            height: 60px;
+        }
+    }
+
+    &__team-img {
+        max-width: 30px;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+    }
+
+    @media(min-width: 500px) {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

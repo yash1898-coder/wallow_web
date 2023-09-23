@@ -1,0 +1,272 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.modal {
+    position: fixed;
+    z-index: 999;
+    padding: min(5vw, 1.5rem) min(5vw, 2rem);
+    background-color: var(--clr-neutral-100);
+    border: 1px solid var(--clr-neutral-550);
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: min(90%, 590px);
+    color: var(--text);
+    border-radius: var(--border-radius);
+    max-height: 95vh;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    &__content {
+        padding-block: .75rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__close-button {
+        cursor: pointer;
+        min-width: 22px;
+        height: 22px;
+        border: 0;
+        background-color: transparent;
+        transition: .25s ease;
+
+        &:hover {
+            opacity: .65;
+        }
+    }
+
+    &__footer {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: space-between;
+        padding-top: 1rem;
+    }
+
+    &__footer--centered {
+        justify-content: center;
+
+    }
+}
+
+.modal--calculator {
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        .button {
+            align-self: center;
+            margin-top: 1rem;
+        }
+    }
+}
+
+.modal-spinner {
+    position: absolute;
+    top: 50%;
+}
+
+.modal--invite {
+    min-height: 450px;
+}
+
+.modal--mobile {
+    @media(max-width: 50rem) {
+        position: fixed;
+        inset: 50px 0;
+        height: 100vh;
+        width: 100%;
+        transform: none;
+    }
+}
+
+.modal--screen {
+    max-width: 450px;
+    height: 100vh;
+    max-height: 100%;
+    border-radius: 0;
+    right: 0;
+    left: unset;
+
+    .messages {
+        overflow-y: auto;
+    }
+
+    &__form {
+
+        .button {
+            align-self: flex-start;
+            margin-top: 1rem;
+        }
+    }
+
+    &__footer {
+        justify-content: flex-start;
+    }
+}
+
+.modal-form {
+    .label {
+        display: inline-block;
+    }
+
+    &__img {
+        max-width: 40px;
+    }
+
+    &__section:not(:first-of-type) {
+        border-top: var(--dotted-border);
+    }
+
+    &__section:not(:first-of-type):not(.rental-address) {
+        padding-top: 1rem;
+    }
+
+    &__section:not(:last-of-type) {
+        padding-bottom: 1rem;
+
+        &>div+div {
+            margin-top: var(--gap, 1.25rem);
+        }
+    }
+
+    &__section--floating-labels {
+
+        &>div,
+        &>label {
+            margin-top: var(--gap, 1.25rem);
+        }
+    }
+
+    &__section-title {
+        line-height: 1;
+    }
+
+    &__inputs-rows-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: min(2vw, 1rem);
+    }
+
+    &__inputs-rows {
+        display: grid;
+    }
+
+    &__inputs-row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .35rem;
+        padding-top: .5rem;
+
+        &>div {
+            width: 100%;
+        }
+
+        &:not(:last-child) {
+            padding-bottom: 1rem;
+        }
+
+        &:not(:first-child) {
+            border-top: var(--dotted-border);
+        }
+
+        @media(min-width: 500px) {
+            flex-direction: row;
+            align-items: flex-end;
+
+            &>div {
+                width: auto;
+            }
+        }
+    }
+}
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgb(0 0 0 / .65);
+    z-index: 999;
+}
+
+.teams-modal {
+    min-height: 595px;
+}
+
+.image-preview-modal {
+    --_padding: 1rem;
+
+    @media (min-width: map-get($breakpoints, md)) {
+        --_padding: 2rem;
+    }
+
+    border-radius: .5rem;
+    border: 0;
+    background-color: transparent;
+    position: fixed;
+    z-index: 999;
+    top: var(--_padding);
+    left: var(--_padding);
+    width: calc(100% - calc(var(--_padding) * 2));
+    height: calc(100% - calc(var(--_padding) * 2));
+    overflow: hidden;
+
+    &__close-button {
+        position: absolute;
+        top: var(--_padding);
+        right: var(--_padding);
+        z-index: 99;
+    }
+
+    &__content {
+        height: 100%;
+        display: grid;
+        place-content: center;
+        position: relative;
+    }
+
+    &__img {
+        margin-inline: auto;
+        max-height: 900px;
+        object-fit: cover;
+        z-index: 111;
+        max-width: 95%;
+
+        @media (min-width: map-get($breakpoints, md)) {
+            max-width: 700px;
+        }
+    }
+
+    &__content {
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(0deg, rgb(0 0 0 / .4), rgb(0 0 0 / .4));
+        }
+    }
+
+    &__blurred-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+        filter: blur(1.5rem);
+    }
+}

@@ -1,0 +1,86 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.feature {
+    position: relative;
+
+    &__title {
+        gap: min(1vw, 1rem);
+    }
+
+    &__drawing {
+        max-width: 120px;
+    }
+
+    &__icon {
+        max-width: 40px;
+    }
+
+    &__outline {
+        position: absolute;
+        left: 300px;
+
+        top: 292px;
+
+        &.red {
+            stroke: var(--clr-red-700);
+        }
+
+        &.orange {
+            stroke: var(--clr-orange-700);
+        }
+
+        &.blue {
+            stroke: var(--clr-blue-700);
+        }
+    }
+
+    &__preview {
+        min-width: 400px;
+    }
+
+    @media(max-width: map-get($breakpoints, md)) {
+        &__imgs {
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+
+    &__drawing {
+        margin-right: -.5rem;
+        margin-bottom: -.5rem;
+    }
+
+    & .link {
+        width: fit-content;
+    }
+
+    @media(min-width: map-get($breakpoints, md)) {
+        display: grid;
+        grid-template-columns: 250px 960px;
+        gap: 1.5rem;
+
+        &__content {
+            grid-row: 1;
+            grid-column: 1;
+
+            svg {
+                min-width: 31px;
+            }
+        }
+
+        &__drawing {
+            grid-row: 1;
+            justify-self: end;
+            align-self: end;
+            max-width: 220px;
+            margin-right: -1rem;
+            grid-column: 1;
+        }
+
+        &__preview {
+            grid-row: 1/-1;
+            grid-column: 2;
+        }
+    }
+}

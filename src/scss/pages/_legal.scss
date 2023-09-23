@@ -1,0 +1,33 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.legal {
+    padding-top: min(8vw, 5rem);
+    width: min(90%, 60rem);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.legal-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__item[data-nesting-level="0"] {
+        counter-increment: list-item-counter;
+    }
+
+    &__item[data-nesting-level="1"] {
+        counter-increment: sub-list-item-counter;
+        list-style: none;
+    }
+
+    &__item[data-nesting-level="1"]::before {
+        content: counters(list-item-counter, ". ") "." counters(sub-list-item-counter, ".") ". ";
+    }
+
+}

@@ -1,0 +1,33 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.search-list {
+    --border-radius: .35rem;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--fs-300);
+    transition: .25s ease;
+
+    &__list {
+        margin-top: 1rem;
+        width: 100%;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        padding-right: .75rem;
+    }
+
+    &__option {
+        min-height: 40px;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        border-radius: .35rem;
+        transition: .25s ease;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .5rem;
+    }
+}

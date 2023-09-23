@@ -1,0 +1,30 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.card {
+    --spacing: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: var(--spacing);
+    }
+
+    &__subtitle {
+        max-width: 650px;
+    }
+
+    &__img {
+        margin-top: auto;
+        align-self: center;
+    }
+
+    &__title {
+        max-width: 500px;
+        margin-top: .25rem;
+    }
+}

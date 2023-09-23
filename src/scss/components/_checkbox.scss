@@ -1,0 +1,29 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.checkbox {
+    min-width: 20px;
+    height: 20px;
+    border-radius: .3rem;
+    display: grid;
+    place-items: center;
+    background-color: var(--clr-neutral-200);
+    border: 1px solid var(--clr-neutral-525);
+    cursor: pointer;
+
+    &.checked {
+        background-color: var(--clr-purple-700);
+        border-color: var(--clr-purple-700);
+    }
+
+    svg {
+        pointer-events: none;
+        display: none;
+        width: 10px;
+        height: 10px;
+
+        &[data-visible=true] {
+            display: block;
+        }
+    }
+}

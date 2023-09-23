@@ -1,0 +1,59 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.customer-stories {
+    margin-inline: auto;
+
+    &__hero {
+        margin-top: min(5vw, 3rem);
+        display: grid;
+        margin-bottom: 4rem;
+
+        @media(min-width: map-get($breakpoints, xl)) {
+            grid-template-columns: 1fr 1fr;
+            align-items: end;
+            gap: 4rem;
+        }
+    }
+
+    &__hero-img {
+        margin-inline: auto;
+        max-width: 400px;
+
+        @media(min-width: map-get($breakpoints, xl)) {
+            margin-bottom: -4rem;
+        }
+    }
+
+    &__section {
+        margin-top: 3rem;
+        display: grid;
+        gap: 1rem;
+
+        @media(min-width: map-get($breakpoints, xl)) {
+            align-items: start;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+    }
+}
+
+.customer-story {
+    display: grid;
+    grid-template-rows: 1fr 70px min-content;
+    align-items: center;
+
+    &__img {
+        margin-bottom: 1rem;
+    }
+
+    &>p {
+        font-size: 1.4rem;
+    }
+
+    &__logo {
+        height: 40px;
+        max-width: 120px;
+        object-fit: contain;
+    }
+}

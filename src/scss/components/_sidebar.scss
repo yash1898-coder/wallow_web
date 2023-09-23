@@ -1,0 +1,221 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+@media(max-width: map-get($breakpoints, md)) {
+    .sidebar {
+        z-index: 999;
+        position: fixed;
+        padding: 0 0 1rem 1.25rem;
+        inset: 0;
+        max-width: 280px;
+        transition: all .4s ease-in-out;
+        transform: translateX(-100%);
+        width: auto;
+
+        &[data-visible=true] {
+            transform: translate(0);
+        }
+    }
+}
+
+.sidebar {
+    min-height: 100vh;
+    background-color: #fff;
+    width: var((--sidebar-width));
+    min-width: var((--sidebar-width));
+
+    @media(min-width: map-get($breakpoints, md)) {
+        padding: 0;
+        --sidebar-width: 0;
+
+        &[data-visible=true] {
+            --sidebar-width: 265px;
+            padding: 0 0 1rem 1.25rem;
+        }
+    }
+
+    &__inner {
+        height: 100vh;
+        overflow-y: auto;
+        padding-right: .5rem;
+        padding-bottom: 1rem;
+
+        @media(min-width: map-get($breakpoints, md)) {
+            padding: 0;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    &__logo {
+        margin-left: -.75rem;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &>span {
+            width: auto !important;
+        }
+
+        .icon-button {
+            height: 40px;
+        }
+    }
+
+    &__icon--link {
+        width: 40px;
+        max-height: 40px;
+    }
+
+    &__dropdown {
+        padding-block: .7rem;
+        border-top: var(--dotted-border);
+        border-bottom: var(--dotted-border);
+    }
+
+    @media(min-width: map-get($breakpoints, md)) {
+        &__close-button {
+            display: none;
+        }
+
+        &__inner {
+            position: sticky;
+            top: 0;
+        }
+    }
+
+    &[data-visible=true] {
+        margin-left: 0;
+    }
+
+    @media(max-width: map-get($breakpoints, md)) {
+        margin-left: -260px;
+    }
+
+    &__logo {
+        max-width: 60px;
+    }
+
+    &__list {
+        display: grid;
+        gap: .1rem;
+    }
+
+    &__link {
+        text-align: start;
+        width: 100%;
+        cursor: pointer;
+        border: 0;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        gap: .9rem;
+        font-size: .95rem;
+        color: var(--clr-neutral-800);
+        transition: .25s ease;
+        padding: 0 .75rem;
+        border-radius: .35rem;
+        transition: .25s ease;
+        min-height: 40px;
+
+        &:hover,
+        &[aria-current="page"],
+        &:focus-within {
+            background-color: var(--clr-neutral-200);
+        }
+
+        svg path {
+            fill: hsl(var(--clr-primary-400));
+        }
+
+        .stroke-svg {
+            stroke: hsl(var(--clr-primary-400));
+        }
+    }
+
+    &__item {
+        @media(max-width: map-get($breakpoints, md)) {
+            &.desktop-only {
+                display: none;
+            }
+        }
+    }
+
+    &__list--dropdown {
+        margin-top: .25rem;
+        padding-left: .3rem;
+    }
+
+    &__list-title {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .75rem;
+        padding: .5rem .2rem;
+        font-weight: 600;
+        color: var(--clr-neutral-800);
+        font-size: .9rem;
+    }
+
+    &__dropdown-title {
+        cursor: pointer;
+        border: 0;
+        background-color: transparent;
+    }
+}
+
+.sidebar-dropdown {
+    position: relative;
+    z-index: 4;
+
+    &__toggle {
+        color: currentColor;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        border: 0;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        font-weight: 500;
+    }
+
+    &__content {
+        min-width: 225px;
+        padding: .6rem;
+        padding-right: .3rem;
+        border-radius: var(--border-radius);
+        display: none;
+        background-color: #fff;
+        border: 2px solid var(--clr-neutral-300);
+        position: absolute;
+        top: 30px;
+
+        &[data-visible=true] {
+            display: block;
+        }
+    }
+
+    &__list {
+        &:first-of-type {
+            margin-top: 1rem;
+        }
+
+        padding-block: .5rem;
+        border-top: 1px solid var(--clr-neutral-400);
+    }
+
+    &__pfp-name {
+        font-weight: 500;
+        font-size: 1.3rem;
+    }
+}

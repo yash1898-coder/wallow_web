@@ -1,0 +1,119 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.jump-to-dropdown-wrapper {
+    position: sticky;
+    z-index: 88;
+    top: 65px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: var(--clr-neutral-500);
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 1;
+        transition: .25s ease;
+        z-index: -1;
+    }
+
+    &.sticking::after {
+        opacity: 0;
+    }
+
+    &.inside-modal {
+        top: 1px;
+    }
+
+    &.inside-modal::after {
+        display: none;
+    }
+}
+
+.jump-to-dropdown {
+    cursor: pointer;
+    --border-radius: .35rem;
+    margin-inline: auto;
+    background-color: var(--clr-neutral-100);
+    border: 1px solid var(--clr-neutral-500);
+    border-radius: 100vmax;
+    font-size: var(--fs-300);
+    transition: .25s ease;
+    width: 210px;
+    position: relative;
+
+    &:focus {
+        outline: none;
+        border-color: var(--clr-green-700);
+    }
+
+    &__options {
+        position: absolute;
+        left: 0;
+        top: calc(100% + .3rem);
+        width: 100%;
+        display: none;
+        max-height: 15em;
+        overflow: auto;
+        border-radius: var(--border-radius);
+        border: 1px solid var(--clr-neutral-500);
+        background-color: var(--clr-neutral-100);
+
+        &[data-visible=true] {
+            display: block;
+        }
+    }
+
+    &__options-title {
+        text-align: start;
+        padding-left: .75rem;
+        padding-block: .5rem;
+    }
+
+    &__curr-option {
+        font-size: .8rem;
+        cursor: pointer;
+        border: 0;
+        background-color: transparent;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 33px;
+        padding-inline: .75rem;
+        color: hsl(var(--clr-primary-400));
+        gap: .5rem;
+
+        svg {
+            max-width: 10px;
+        }
+    }
+}
+
+.jump-to-dropdown-option {
+    text-align: left;
+    cursor: pointer;
+    padding: .5em 1em;
+    color: hsl(var(--clr-primary-400));
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    gap: .5rem;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    width: 100%;
+    text-align: start;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid hsl(var(--clr-neutral-700) / .7);
+    }
+
+    &:hover {
+        background-color: var(--clr-green-400);
+        color: #fff;
+    }
+}

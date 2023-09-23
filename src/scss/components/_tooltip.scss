@@ -1,0 +1,70 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.tooltip-wrapper {
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    font-weight: 500;
+    display: none;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;
+    width: max-content;
+    background-color: var(--clr-neutral-500);
+    padding: .25em .6em;
+    border-radius: .35rem;
+    box-shadow: 2px 2px 15px rgb(0 0 0 / .1);
+
+    &.right {
+        top: 50%;
+        left: 140%;
+        transform: translateY(-50%);
+        right: auto;
+        padding-block: .5rem;
+    }
+
+    &.left {
+        top: 50%;
+        right: 140%;
+        transform: translateY(-50%);
+        left: auto;
+        width: max-content;
+        padding-block: .5rem;
+    }
+
+    &[data-visible=true] {
+        display: block;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        translate: -50% 0;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid var(--clr-neutral-500);
+    }
+
+    &.right::before {
+        left: -4px;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%) rotate(90deg);
+    }
+
+    &.left::before {
+        right: -20px;
+        top: 50%;
+        left: auto;
+        bottom: auto;
+        transform: translateY(-50%) rotate(-90deg);
+    }
+}

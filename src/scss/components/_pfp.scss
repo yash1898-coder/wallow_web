@@ -1,0 +1,55 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.pfp {
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: .3rem;
+    color: #000;
+    background-color: var(--clr-neutral-400);
+    border: 1px solid var(--clr-neutral-500);
+    display: grid;
+    place-content: center;
+    min-width: 30px;
+    max-width: 30px;
+    height: 30px;
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+        min-width: 30px;
+        max-width: 30px;
+        height: 30px;
+    }
+}
+
+.pfp-button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .1s ease;
+
+    &:hover .pfp,
+    &:focus-within .pfp {
+        background-color: var(--clr-neutral-500);
+    }
+}
+
+.profile-card {
+    border: 1px solid var(--clr-neutral-500);
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: .5rem;
+
+    .pfp {
+        min-width: 50px;
+        max-width: 50px;
+        height: 50px;
+
+        img {
+            min-width: 50px;
+            max-width: 50px;
+            height: 50px;
+        }
+    }
+}

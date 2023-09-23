@@ -1,0 +1,14 @@
+@use '../../base' as *;
+@use '../../abstracts' as *;
+
+.home-features {
+    margin-top: min(10vw, 4.375rem);
+
+    &__features-container {
+        padding-top: min(6vw, 4rem);
+        padding-bottom: 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+    }
+}

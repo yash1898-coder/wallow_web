@@ -1,0 +1,16 @@
+@use '../../base' as *;
+@use '../../abstracts' as *;
+
+.dashboard-insights {
+    &__container {
+        position: relative;
+    }
+
+    &__chart {
+        min-height: 600px;
+
+        @media (min-width: map-get($breakpoints, md)) {
+            min-height: 700px;
+        }
+    }
+}

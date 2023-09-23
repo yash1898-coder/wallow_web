@@ -1,0 +1,77 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.pricing-card {
+    background-color: var(--clr-neutral-300);
+    border: 1px solid var(--clr-neutral-500);
+    border-radius: .4rem;
+    max-width: 300px;
+    position: relative;
+
+    &__body,
+    &__header {
+        border-radius: inherit;
+        padding: 1rem;
+    }
+
+    &__chat {
+        margin-bottom: 4.85rem;
+    }
+
+    &__header {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: .3rem;
+    }
+
+    &__accent {
+        position: absolute;
+        top: -43px;
+        font-size: .9rem;
+        font-weight: 600;
+        left: -1px;
+        width: 100.75%;
+        border: 1px solid var(--clr-neutral-500);
+        background-color: var(--clr-neutral-300);
+        padding: .6rem 1rem;
+        border-radius: .35rem .35rem 0 0;
+    }
+
+    &__badge {
+        background-color: var(--clr-neutral-300);
+        text-transform: uppercase;
+        border-radius: .3rem;
+        padding-inline: .5rem;
+        font-size: var(--fs-200);
+    }
+
+    &__button {
+        margin-top: 1rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__icon {
+        max-width: 75px;
+        margin-left: -1rem;
+    }
+
+    &__list:not(h4+ul) {
+        margin-top: .75rem;
+    }
+
+    &__list-item {
+        line-height: 1.7;
+        gap: .5rem;
+    }
+}
+
+.pricing-card--accent {
+    border-radius: 0 0 .4rem .4rem;
+    border-top: 0;
+
+    @media(max-width: 720px) {
+        margin-top: 2.75rem;
+    }
+}

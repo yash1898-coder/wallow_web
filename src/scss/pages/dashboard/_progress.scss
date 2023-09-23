@@ -1,0 +1,20 @@
+@use '../../base' as *;
+@use '../../abstracts' as *;
+
+.dashboard-progress {
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+
+    &__chart {
+        position: relative;
+        min-height: 600px;
+
+        .spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+        }
+    }
+}

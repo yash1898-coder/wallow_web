@@ -1,0 +1,39 @@
+@use '../../base' as *;
+@use '../../abstracts' as *;
+
+.how-teams-use-testimonials {
+    padding-top: min(10vw, 5rem);
+
+    &>p {
+        max-width: 60ch;
+        margin-inline: auto;
+    }
+
+    &__container {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+}
+
+.how-teams-use-testimonial {
+    background-color: var(--clr-neutral-300);
+    border-radius: .6rem;
+    padding: 1.5rem;
+    border: 1px solid var(--clr-neutral-500);
+    max-width: 20rem;
+    text-align: center;
+
+    &>.flex {
+        margin-bottom: .75rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__icon {
+        margin-right: -.5rem;
+        max-width: 35px;
+    }
+}

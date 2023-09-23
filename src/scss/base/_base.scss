@@ -1,0 +1,63 @@
+@use '../abstracts' as *;
+
+body {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-400);
+    color: var(--clr-neutral-800);
+    min-height: 100vh;
+}
+
+.main-wrapper {
+    overflow-x: hidden;
+}
+
+.logo {
+    width: 60px;
+}
+
+.dashboard-wrapper {
+    display: flex;
+}
+
+label {
+    display: block;
+    text-align: left;
+}
+
+.dashboard-main {
+    background-color: #fff;
+    display: flex;
+    width: calc(100% - var(--scrollbar-width));
+    flex: 1;
+    flex-direction: column;
+
+    main {
+        height: 100%;
+    }
+}
+
+.or-divider {
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: .75rem;
+    margin-bottom: .35rem;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: "";
+    height: 2px;
+    width: 50%;
+    display: inline-block;
+    background-color: var(--clr-neutral-500);
+}
+
+.or-divider::before {
+    margin-right: .75rem;
+}
+
+.or-divider::after {
+    margin-left: .75rem;
+}

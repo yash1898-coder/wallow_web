@@ -1,0 +1,15 @@
+@use '../../base' as *;
+@use '../../abstracts' as *;
+
+.features-testimonials {
+    margin-top: min(15vw, 4.375rem);
+
+    &__grid {
+        display: grid;
+        gap: min(5vw, 1.75rem);
+
+        @media(min-width: map-get($breakpoints, md)) {
+            grid-template-columns: 320px 1fr;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.usage-way {
+    &__icon {
+        max-width: 25px;
+    }
+}

@@ -1,0 +1,38 @@
+@use '../../base' as *;
+@use '../../abstracts' as *;
+
+.billing-overview {
+    &__links {
+        max-width: 800px;
+        margin-top: min(10vw, 2.5rem);
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+
+        @media(min-width: map-get($breakpoints, md)) {}
+    }
+}
+
+.billing-overview-link {
+    transition: .1s ease;
+    border-radius: var(--border-radius);
+    padding: .5rem 1rem;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover,
+    &:focus-within {
+        background-color: var(--clr-neutral-300);
+    }
+
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+}

@@ -1,0 +1,133 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.message-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.message-card {
+    position: relative;
+
+    &__content {
+        position: relative;
+        width: 100%;
+    }
+
+
+    &__labels {
+        position: absolute;
+        bottom: 105%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 3px;
+    }
+
+    &__label {
+        width: max-content;
+        padding: 1.5px 6px;
+        padding-bottom: 3px;
+        line-height: 1.2;
+        border-radius: 5px;
+        color: #fff;
+
+        &.red {
+            background-color: var(--clr-red-700);
+        }
+
+        &.yellow {
+            background-color: var(--clr-orange-400);
+        }
+
+        &.progress {
+            background-color: #00D959;
+        }
+
+        font-size: 11px;
+
+        &:hover {
+            text-decoration: none !important;
+        }
+    }
+
+    .team-icon-bg__icon {
+        max-width: 40px;
+    }
+
+    &__image-attachment {
+        border: 0;
+        cursor: zoom-in;
+        max-width: 150px;
+    }
+
+    .pfp {
+        min-width: 40px;
+        height: 40px;
+
+        img {
+            min-width: 40px;
+            height: 40px;
+        }
+    }
+
+    .replies-count {
+        .pfp {
+            min-width: 30px;
+            height: 30px;
+
+            img {
+                min-width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    .reply-button {
+        transition: .25s ease;
+        opacity: 0;
+        pointer-events: none;
+
+    }
+
+    &:hover {
+        .reply-button {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    .text-red,
+    .text-yellow {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &>.flex {
+        align-items: flex-start;
+    }
+
+    &__match {
+        margin-bottom: .1rem;
+        max-width: 20px;
+    }
+
+    &__replies {
+        margin-top: .5rem;
+    }
+
+    &__title {
+        line-height: 1;
+    }
+
+    &__img {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        border-radius: .3rem;
+    }
+}

@@ -1,0 +1,42 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.dashboard-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 1rem;
+    min-height: 60px;
+    height: 60px;
+    z-index: 200;
+
+    &__right-side {
+        position: absolute;
+        right: 15px;
+        gap: min(1.5vw, 1rem);
+    }
+
+    &__page-title {
+        font-size: .85rem;
+    }
+
+    &__product {
+        font-size: .8rem;
+        white-space: nowrap;
+        display: none;
+
+        @media(min-width: 480px) {
+            display: block;
+            font-size: 1rem;
+        }
+    }
+
+    &__pfp {
+        border: 2px solid var(--clr-neutral-500);
+        max-width: 40px;
+        border-radius: 100vmax;
+    }
+}

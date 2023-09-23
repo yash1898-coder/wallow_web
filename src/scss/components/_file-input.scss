@@ -1,0 +1,45 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.file-input {
+    background-color: var(--clr-neutral-300);
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+    width: min(100%, var(--width));
+    min-height: var(--input-height);
+    border: 1px solid var(--clr-neutral-500);
+    border-radius: var(--border-radius);
+    transition: .25s ease;
+    padding: 1.5rem min(5vw, 1.5rem);
+    min-height: 110px;
+
+    .pfp {
+        border: 0;
+        background-color: transparent;
+        border-radius: 0;
+        min-width: auto;
+        height: auto;
+        max-width: 200px;
+        max-height: 100px;
+
+        img {
+            max-width: 200px;
+            max-height: 100px;
+            min-width: auto;
+            height: auto;
+        }
+    }
+
+    .reset-button {
+        height: 35px;
+    }
+
+    &:focus-within,
+    &:hover {
+        border-color: var(--clr-neutral-525);
+    }
+}

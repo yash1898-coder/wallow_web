@@ -1,0 +1,6 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.about-section {
+    margin-top: min(15vw, 7rem);
+}

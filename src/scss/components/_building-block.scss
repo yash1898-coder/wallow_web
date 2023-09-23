@@ -1,0 +1,50 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.building-block {
+    --spacing: min(5vw, 2rem);
+    display: flex;
+    flex-direction: column;
+
+    &__icon {
+        max-width: 35px;
+    }
+
+    &__content:not(.building-block--wide__content) {
+        padding: var(--spacing);
+    }
+
+    &__subtitle {
+        max-width: 520px;
+    }
+
+    &__img {
+        margin-top: auto;
+        align-self: flex-end;
+    }
+}
+
+.building-block:last-of-type {
+    .building-block__icon {
+        max-width: 22px;
+    }
+
+    .building-block__title {
+        margin-top: 1rem;
+    }
+}
+
+.building-block--wide {
+    position: relative;
+    padding: var(--spacing);
+    grid-column: 1/-1;
+
+    &__drawing {
+        top: -100px;
+        position: absolute;
+    }
+
+    &__img {
+        margin-top: var(--spacing);
+    }
+}

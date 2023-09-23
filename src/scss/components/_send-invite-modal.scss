@@ -1,0 +1,29 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.send-invite-modal {
+    &__email-items {
+        margin-top: .5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+    }
+
+    &__email-item {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        background-color: var(--clr-blue-200);
+        border-radius: .35rem;
+        padding: .35rem 1rem;
+
+        button:hover {
+            opacity: .6;
+        }
+
+        svg {
+            width: 17px;
+            height: 17px;
+        }
+    }
+}

@@ -1,0 +1,107 @@
+@use '../../base' as *;
+@use '../../abstracts' as *;
+
+.invoice {
+    border-radius: .5rem;
+    padding: min(10vw, 4rem) min(5vw, 3rem);
+    background-color: var(--clr-neutral-300);
+    border: 1px solid var(--clr-neutral-500);
+    max-width: 800px;
+
+    .link {
+        justify-content: center;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+
+        @media(min-width: 1000px) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__info--border {
+        padding-block: .75rem;
+        margin-top: 0;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--clr-neutral-525);
+        }
+    }
+
+    &__info--align-end {
+        max-width: 500px;
+        margin-left: auto;
+    }
+
+    &__info-wrapper {
+        border-top: 1px solid var(--clr-neutral-525);
+        padding-top: 1rem;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+    }
+
+    &__info--smaller {
+        max-width: 380px;
+
+        @media(min-width: 600px) {
+            display: grid;
+            grid-template-columns: 50% 1fr;
+        }
+    }
+}
+
+.invoice--payment-details {
+    padding: min(5vw, 2rem) min(5vw, 3rem);
+}
+
+.invoice--invoice-details {
+    max-width: 100%;
+    padding: min(5vw, 2rem) min(5vw, 3rem);
+}
+
+.invoice--invoice-details-table {
+    margin-block: 4rem;
+    --columns: 2fr 1fr 1fr 1fr 1fr;
+
+    &__header {
+        display: none;
+    }
+
+    &__header,
+    &__row {
+        @media(min-width: 1200px) {
+            display: grid;
+            grid-template-columns: var(--columns);
+        }
+    }
+
+    &__header-item--mobile {
+        font-weight: 600;
+
+        @media(min-width: 1200px) {
+            display: none;
+        }
+    }
+
+    &__header {
+        font-weight: 600;
+        border-bottom: 1px solid var(--clr-neutral-550);
+    }
+
+    &__row {
+        &:not(:last-child) {
+            border-bottom: 2px solid var(--clr-neutral-550);
+        }
+    }
+
+    &__row-item,
+    &__header-item {
+        padding: .55rem;
+    }
+}

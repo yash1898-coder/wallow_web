@@ -1,0 +1,39 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.cookie-notice {
+    z-index: 9;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: space-between;
+
+        @media(min-width: map-get($breakpoints, md)) {
+            flex-direction: row;
+        }
+    }
+
+    .button {
+        white-space: nowrap;
+    }
+
+    .button-reset {
+        min-width: 30px;
+    }
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 0;
+    box-shadow: 2px 2px 20px rgb(0 0 0 / .2);
+    background-color: #fff;
+    display: none;
+
+    &[data-visible=true] {
+        display: block;
+    }
+}

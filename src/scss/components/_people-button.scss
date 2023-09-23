@@ -1,0 +1,58 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.people-button {
+    cursor: pointer;
+    border-radius: .313rem;
+    padding: 0.48rem 0.75rem;
+    border: 1px solid var(--clr-neutral-300);
+    background-color: transparent;
+    transition: .1s ease;
+    display: flex;
+    align-items: center;
+    color: currentColor;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover:not(:disabled),
+    &:focus-within:not(:disabled) {
+        background-color: var(--clr-neutral-300);
+    }
+
+    &__img {
+        width: 30px;
+        height: 30px;
+        border-radius: .25rem;
+        object-fit: cover;
+
+        &:nth-child(1) {
+            z-index: 5;
+        }
+
+        &:nth-child(2) {
+            z-index: 4;
+            margin-left: -5px;
+        }
+
+        &:nth-child(3) {
+            z-index: 3;
+            margin-left: -5px;
+        }
+
+        &:nth-child(4) {
+            z-index: 2;
+            margin-left: -5px;
+        }
+
+        &:nth-child(5) {
+            margin-left: -5px;
+            z-index: 1;
+        }
+    }
+
+    small {
+        margin-left: 5px;
+    }
+}

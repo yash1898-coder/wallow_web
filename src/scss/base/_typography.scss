@@ -1,0 +1,156 @@
+@use '../abstracts' as *;
+
+.ff-primary {
+    font-family: var(--ff-primary);
+}
+
+.ff-secondary {
+    font-family: var(--ff-secondary);
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.thick-underline {
+    width: fit-content;
+    border-bottom: 3px solid currentColor;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.fs-200 {
+    font-size: var(--fs-200);
+}
+
+.fs-300 {
+    font-size: var(--fs-300);
+}
+
+.fs-400 {
+    font-size: var(--fs-400);
+}
+
+.fs-500 {
+    font-size: var(--fs-500);
+}
+
+.fs-600 {
+    font-size: var(--fs-600);
+}
+
+.fs-700 {
+    font-size: var(--fs-700);
+}
+
+.fs-800 {
+    font-size: var(--fs-800);
+}
+
+.fs-850 {
+    font-size: var(--fs-850);
+}
+
+.fs-900 {
+    font-size: var(--fs-900);
+}
+
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700,
+b {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fs-900,
+.fs-850,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
+}
+
+.icon-word {
+    margin-left: min(2vw, 1rem);
+    display: inline-flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-underline-offset: .5rem;
+
+    @media(min-width: map-get($breakpoints, md)) {
+        text-underline-offset: 1.08rem;
+    }
+
+    img {
+        max-width: 46px;
+        margin-bottom: -.5rem;
+
+        @media(min-width:map-get($breakpoints, lg)) {
+            margin-bottom: -1rem;
+            max-width: 76px;
+        }
+
+        margin-right: min(2vw, 1rem);
+    }
+
+    &:nth-of-type(3) {
+        img {
+            margin-bottom: 0;
+            max-width: 30px;
+
+            @media(min-width:map-get($breakpoints, lg)) {
+                max-width: 60px;
+
+            }
+        }
+    }
+}
+
+.icon-words-title {
+    &__word {
+        display: inline-flex;
+        align-items: flex-end;
+    }
+}

@@ -1,0 +1,48 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.dashboard-slider-wrapper {
+    padding-inline: .25rem !important;
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+
+    .button-prev {
+        transform: rotate(90deg);
+    }
+
+    .button-next {
+        transform: rotate(-90deg);
+    }
+
+    @media (min-width: map-get($breakpoints, md)) {
+        width: calc(100vw - (var(--sidebar-width) + var(--scrollbar-width)));
+    }
+}
+
+.dashboard-slider {
+    overflow: hidden;
+
+    .swiper-wrapper {
+        padding-block: 1rem;
+        width: fit-content;
+        margin-inline: auto;
+    }
+
+    .swiper-slide {
+        width: fit-content;
+    }
+
+    a {
+        user-select: none;
+        background-color: var(--clr-neutral-300);
+        border-radius: .5rem;
+        padding: .5rem 1rem;
+        font-size: var(--fs-200);
+        transition: .15s ease;
+
+        &:hover {
+            background-color: var(--clr-neutral-500);
+        }
+    }
+}

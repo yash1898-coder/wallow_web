@@ -1,0 +1,16 @@
+@use '../../base' as *;
+@use '../../abstracts' as *;
+
+.features-partners {
+    margin-top: min(15vw, 7.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    &__subtitle {
+        max-width: 550px;
+        margin-inline: auto;
+    }
+}

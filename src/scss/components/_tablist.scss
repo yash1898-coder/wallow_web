@@ -1,0 +1,36 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.tablist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem;
+    justify-content: center;
+
+    &__tab {
+        color: currentColor;
+        font-size: var(--fs-400);
+        font-weight: 500;
+        cursor: pointer;
+        border: 0;
+        background-color: transparent;
+        border-radius: .35rem;
+        padding: .25em .5em;
+        transition: .25s ease;
+
+        &:focus {
+            outline: none;
+        }
+
+        &[aria-selected=true],
+        &:hover,
+        &:focus-within {
+            background-color: var(--clr-neutral-300);
+        }
+    }
+
+    &__tab-icon {
+        display: none;
+    }
+
+}

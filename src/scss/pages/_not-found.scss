@@ -1,0 +1,11 @@
+@use '../base' as *;
+@use '../abstracts' as *;
+
+.not-found {
+    &__status-code {
+        font-size: 8rem;
+        line-height: 1;
+    }
+
+    padding-block: 6rem;
+}
