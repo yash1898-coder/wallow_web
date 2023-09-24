@@ -12,6 +12,7 @@ export const MentionDropdown = ({
     focused,
     textareaRef,
     position,
+    chatMeassge
 }) => {
     const search = useSearch(query, ["Full Name"])
 

@@ -689,7 +689,6 @@ const FeedbackItem = ({ item, id }) => {
 
     const feedbackItem = { ...item, Replies: item.replies ?? [] }
 
-    console.log('Get Replyyy>>',item)
 
     return (
         <div

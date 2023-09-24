@@ -24,7 +24,6 @@ export const Message = ({
     const {
         User: { first_name, last_name, profile_image, id },
     } = item
-    console.log("Get Response:::",item)
     useEffect(() => {
         if (!isLoading && !error) {
             setEditing(false)
